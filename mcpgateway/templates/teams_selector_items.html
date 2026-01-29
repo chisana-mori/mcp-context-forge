@@ -12,13 +12,13 @@
   <span>
     {% if team.is_personal %}👤{% else %}🏢{% endif %} {{ team.name }}
   </span>
-  <span class="text-xs text-gray-500 dark:text-gray-400">{{ team.member_count|default(0) }} members</span>
+  <span class="text-xs text-gray-500 dark:text-gray-400" data-i18n="members">members</span>
 </button>
 {% endfor %}
 
 {% if not data %}
 <div class="px-4 py-2 text-sm text-gray-500 dark:text-gray-400 text-center">
-  No teams found
+  <span data-i18n="No teams found">No teams found</span>
 </div>
 {% endif %}
 
@@ -36,7 +36,7 @@
       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>
-    Loading more teams...
+    <span data-i18n="Loading more teams...">Loading more teams...</span>
   </span>
 </div>
 {% endif %}

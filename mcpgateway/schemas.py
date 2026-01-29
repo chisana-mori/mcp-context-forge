@@ -53,7 +53,7 @@ logger = logging.getLogger(__name__)
 # (e.g., from settings.* or SecurityValidator.*) are NOT precompiled because tests
 # override class/settings attributes at runtime via monkeypatch.
 _HOSTNAME_RE: Pattern[str] = re.compile(r"^(https?://)?([a-zA-Z0-9.-]+)(:[0-9]+)?$")
-_SLUG_RE: Pattern[str] = re.compile(r"^[a-z0-9-]+$")
+_SLUG_RE: Pattern[str] = re.compile(r"^[\w0-9-]+$")
 
 
 def encode_datetime(v: datetime) -> str:
@@ -5683,7 +5683,7 @@ class TeamCreateRequest(BaseModel):
         v = v.strip().lower()
         # Uses precompiled regex for slug validation
         if not _SLUG_RE.match(v):
-            raise ValueError("Slug must contain only lowercase letters, numbers, and hyphens")
+            raise ValueError("Slug must contain only letters, numbers, and hyphens")
         if v.startswith("-") or v.endswith("-"):
             raise ValueError("Slug cannot start or end with hyphens")
         return v

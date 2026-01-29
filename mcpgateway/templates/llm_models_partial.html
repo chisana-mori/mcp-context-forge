@@ -8,25 +8,25 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
-      LLM Models
+      <span data-i18n="LLM Models">LLM Models</span>
     </h2>
-    <p class="text-green-100 mb-4">Configure available models for each provider.</p>
+    <p class="text-green-100 mb-4" data-i18n="Configure available models for each provider">Configure available models for each provider.</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <div class="text-center">
         <div class="text-3xl font-bold">{{ models|length }}</div>
-        <div class="text-green-100 text-sm">Total Models</div>
+        <div class="text-green-100 text-sm" data-i18n="Total Models">Total Models</div>
       </div>
       <div class="text-center">
         <div class="text-3xl font-bold">{{ models|selectattr('enabled')|list|length }}</div>
-        <div class="text-green-100 text-sm">Enabled</div>
+        <div class="text-green-100 text-sm" data-i18n="Enabled">Enabled</div>
       </div>
       <div class="text-center">
         <div class="text-3xl font-bold">{{ models|selectattr('supports_streaming')|list|length }}</div>
-        <div class="text-green-100 text-sm">Streaming</div>
+        <div class="text-green-100 text-sm" data-i18n="Streaming">Streaming</div>
       </div>
       <div class="text-center">
         <div class="text-3xl font-bold">{{ models|selectattr('supports_function_calling')|list|length }}</div>
-        <div class="text-green-100 text-sm">Function Calling</div>
+        <div class="text-green-100 text-sm" data-i18n="Function Calling">Function Calling</div>
       </div>
     </div>
   </div>
@@ -34,10 +34,10 @@
   <!-- Filter and Add -->
   <div class="flex justify-between items-center">
     <div class="flex items-center space-x-4">
-      <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Filter by Provider:</label>
+      <label class="text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Filter by Provider:">Filter by Provider:</label>
       <select id="provider-filter" onchange="filterModelsByProvider(this.value)"
         class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-        <option value="">All Providers</option>
+        <option value="" data-i18n="All Providers">All Providers</option>
         {% for provider in providers %}
         {% if provider.id == selected_provider_id %}
         <option value="{{ provider.id }}" selected>{{ provider.name }}</option>
@@ -52,7 +52,7 @@
       <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
       </svg>
-      Add Model
+      <span data-i18n="Add Model">Add Model</span>
     </button>
   </div>
 
@@ -175,15 +175,15 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">No models configured</h3>
-              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Add models to your configured providers.</p>
+              <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white" data-i18n="No models configured">No models configured</h3>
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400" data-i18n="Add models to your configured providers">Add models to your configured providers.</p>
               <div class="mt-6">
                 <button onclick="showAddModelModal()"
                   class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
                   <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                   </svg>
-                  Add Model
+                  <span data-i18n="Add Model">Add Model</span>
                 </button>
               </div>
             </td>

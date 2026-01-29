@@ -1386,7 +1386,7 @@ class Settings(BaseSettings):
     # Consecutive failures before marking gateway offline
     unhealthy_threshold: int = 3
     # Max concurrent health checks per worker
-    max_concurrent_health_checks: int = 10
+    max_concurrent_health_checks: int = 5
 
     # Auto-refresh tools/resources/prompts from gateways during health checks
     # When enabled, tools/resources/prompts are fetched and synced with DB during health checks
@@ -1448,7 +1448,7 @@ class Settings(BaseSettings):
     )
 
     # SQLite busy timeout: Maximum time (ms) SQLite will wait to acquire a database lock before returning SQLITE_BUSY.
-    db_sqlite_busy_timeout: int = Field(default=5000, ge=1000, le=60000, description="SQLite busy timeout in milliseconds (default: 5000ms)")
+    db_sqlite_busy_timeout: int = Field(default=30000, ge=1000, le=60000, description="SQLite busy timeout in milliseconds (default: 30000ms)")
 
     # Cache
     cache_type: Literal["redis", "memory", "none", "database"] = "database"  # memory or redis or database
@@ -1868,8 +1868,8 @@ Disallow: /
     validation_allowed_url_schemes: List[str] = ["http://", "https://", "ws://", "wss://"]
 
     # Character validation patterns
-    validation_name_pattern: str = r"^[a-zA-Z0-9_.\-\s]+$"  # Allow spaces for names
-    validation_identifier_pattern: str = r"^[a-zA-Z0-9_\-\.]+$"  # No spaces for IDs
+    validation_name_pattern: str = r"^[\w\.\-\s]+$"  # Allow spaces for names (Unicode support)
+    validation_identifier_pattern: str = r"^[\w\-\.]+$"  # No spaces for IDs (Unicode support)
     validation_safe_uri_pattern: str = r"^[a-zA-Z0-9_\-.:/?=&%{}]+$"
     validation_unsafe_uri_pattern: str = r'[<>"\'\\]'
     validation_tool_name_pattern: str = r"^[a-zA-Z0-9_][a-zA-Z0-9._/-]*$"  # MCP tool naming per SEP-986
