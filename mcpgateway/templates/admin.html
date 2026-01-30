@@ -3120,8 +3120,9 @@
   <div id="tool-ops-panel" class="tab-panel">
     <div class="flex justify-between items-center mb-4">
       <div>
-        <h2 class="text-2xl font-bold dark:text-gray-200">Tool Operations</h2>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+        <h2 class="text-2xl font-bold dark:text-gray-200" data-i18n="Tool Operations">Tool Operations</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1"
+          data-i18n="Select tools and perform batch operations like enrichment and validation.">
           Select tools and perform batch operations like enrichment and validation.
         </p>
       </div>
@@ -3132,7 +3133,7 @@
         <div class="lg:col-span-2 bg-white border border-gray-200 rounded-lg shadow-sm">
           <!-- Search box and checkbox controls, which are static and not part of the HTMX swap -->
           <div class="p-4 flex items-center justify-between border-b border-gray-200">
-            <input type="text" id="searchBox" placeholder="Search tools..."
+            <input type="text" id="searchBox" placeholder="Search tools..." data-i18n-placeholder="Search tools..."
               class="w-full mr-4 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none" />
             <div class="flex items-center space-x-4">
               <input type="checkbox" id="show-inactive-tools-toolops" name="include_inactive"
@@ -3140,7 +3141,8 @@
                 hx-vals="js:{include_inactive: document.getElementById('show-inactive-tools-toolops').checked}"
                 hx-trigger="change" hx-target="#tool-ops-main-content-wrapper" hx-swap="innerHTML"
                 hx-indicator="#tool-ops-loading-indicator" />
-              <label for="show-inactive-tools-toolops" class="text-sm font-medium text-gray-700 dark:text-gray-300">Show
+              <label for="show-inactive-tools-toolops" class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                data-i18n="Show Inactive">Show
                 Inactive</label>
             </div>
           </div>
@@ -3151,7 +3153,7 @@
             <!-- Initial loading spinner will be here, and replaced by the partial's content -->
             <div id="tool-ops-loading-indicator" class="flex items-center justify-center p-4">
               <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mr-4"></div>
-              <span class="text-gray-600 dark:text-gray-400">Loading tools...</span>
+              <span class="text-gray-600 dark:text-gray-400" data-i18n="Loading tools...">Loading tools...</span>
             </div>
           </div>
 
@@ -3161,33 +3163,35 @@
         <div class="space-y-6">
           <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
             <div class="flex items-center justify-between mb-3">
-              <h3 class="text-sm font-medium text-gray-900">Selected Tools</h3>
+              <h3 class="text-sm font-medium text-gray-900" data-i18n="Selected Tools">Selected Tools</h3>
               <span id="selectedCount" class="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-800">0</span>
             </div>
-            <div id="selectedList" class="flex flex-col gap-2 text-sm mb-4 text-gray-500">
+            <div id="selectedList" class="flex flex-col gap-2 text-sm mb-4 text-gray-500" data-i18n="No tools selected">
               No tools selected
             </div>
           </div>
 
           <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-            <h3 class="text-sm font-medium text-gray-900 mb-4">Operations</h3>
+            <h3 class="text-sm font-medium text-gray-900 mb-4" data-i18n="Operations">Operations</h3>
             <div class="flex flex-col space-y-3">
               <!-- <button class="w-full px-3 py-2 bg-green-600 text-white rounded-md text-sm hover:bg-green-700">Enrich Tools</button>
                   <button class="w-full px-3 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700">Tool Validation</button> -->
               <div class="space-y-2">
                 <button id="enrichToolsBtn"
-                  class="w-full px-3 py-2 bg-teal-600 text-white rounded-md text-sm hover:bg-teal-700">
+                  class="w-full px-3 py-2 bg-teal-600 text-white rounded-md text-sm hover:bg-teal-700"
+                  data-i18n="Enrich Tools">
                   Enrich Tools
                 </button>
 
                 <button id="validateToolsBtn"
-                  class="w-full px-3 py-2 bg-purple-600 text-white rounded-md text-sm hover:bg-purple-700">
+                  class="w-full px-3 py-2 bg-purple-600 text-white rounded-md text-sm hover:bg-purple-700"
+                  data-i18n="Generate Test Cases">
                   Generate Test Cases
                 </button>
               </div>
 
               <button id="clearToolsBtn"
-                class="w-full px-3 py-2 bg-gray-600 text-white rounded-md text-sm hover:bg-gray-700">
+                class="w-full px-3 py-2 bg-gray-600 text-white rounded-md text-sm hover:bg-gray-700" data-i18n="Clear">
                 Clear
               </button>
             </div>
@@ -4971,7 +4975,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         <!-- Search Row -->
         <div class="flex items-center space-x-2">
           <div class="relative">
-            <input type="text" id="a2a-agents-search-input" data-i18n-placeholder="Search agents via tags..." placeholder="Search agents via tags..."
+            <input type="text" id="a2a-agents-search-input" data-i18n-placeholder="Search agents via tags..."
+              placeholder="Search agents via tags..."
               class="w-80 px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
           </div>
           <button id="a2a-agents-clear-search" onclick="clearSearch('a2a-agents')"
@@ -4989,8 +4994,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
     <!-- A2A Agents List -->
     <div class="bg-white shadow rounded-lg p-4 mb-4 dark:bg-gray-800">
       <div class="p-0">
-        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-4"
-          data-i18n="Registered A2A Agents">
+        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-4" data-i18n="Registered A2A Agents">
           Registered A2A Agents
         </h3>
         <div class="overflow-x-auto">
@@ -5234,8 +5238,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
   <!-- A2A Agent Add Form -->
   <div class="bg-white shadow rounded-lg p-6 mb-6 dark:bg-gray-800 mt-8">
-    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-4"
-      data-i18n="Add New A2A Agent">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-4" data-i18n="Add New A2A Agent">
       Add New A2A Agent
     </h3>
     <form method="POST" id="add-a2a-form">
@@ -5245,7 +5248,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
           <label for="a2a-agent-name" class="block text-sm font-medium text-gray-700 dark:text-gray-400"
             data-i18n="Agent Name">Agent
             Name</label>
-          <input type="text" name="name" required id="a2a-agent-name" data-i18n-placeholder="my-assistant-agent" placeholder="my-assistant-agent"
+          <input type="text" name="name" required id="a2a-agent-name" data-i18n-placeholder="my-assistant-agent"
+            placeholder="my-assistant-agent"
             class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
           <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
             data-i18n="Agent Name is required.">Agent
@@ -5254,11 +5258,10 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
         <!-- Endpoint URL -->
         <div class="relative">
-          <label for="a2a-agent-endpoint-url"
-            class="block text-sm font-medium text-gray-700 dark:text-gray-400" data-i18n="Endpoint URL">Endpoint URL</label>
+          <label for="a2a-agent-endpoint-url" class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+            data-i18n="Endpoint URL">Endpoint URL</label>
           <input type="url" name="endpoint_url" required id="a2a-agent-endpoint-url"
-            data-i18n-placeholder="https://api.example.com/agent"
-            placeholder="https://api.example.com/agent"
+            data-i18n-placeholder="https://api.example.com/agent" placeholder="https://api.example.com/agent"
             class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
           <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
             data-i18n="Endpoint URL is required.">Endpoint
@@ -5375,30 +5378,25 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         <div id="auth-oauth-fields-a2a" style="display: none">
           <div class="space-y-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Grant Type">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Grant Type">
                 Grant Type
               </label>
               <select name="oauth_grant_type" id="oauth-grant-type-a2a"
                 class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                <option value="authorization_code" selected
-                  data-i18n="Authorization Code (User Delegation)">
+                <option value="authorization_code" selected data-i18n="Authorization Code (User Delegation)">
                   Authorization Code (User Delegation)
                 </option>
-                <option value="client_credentials"
-                  data-i18n="Client Credentials (Machine-to-Machine)">
+                <option value="client_credentials" data-i18n="Client Credentials (Machine-to-Machine)">
                   Client Credentials (Machine-to-Machine)
                 </option>
-                <option value="password"
-                  data-i18n="Resource Owner Password Credentials (Keycloak/Legacy)">
+                <option value="password" data-i18n="Resource Owner Password Credentials (Keycloak/Legacy)">
                   Resource Owner Password Credentials (Keycloak/Legacy)
                 </option>
               </select>
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Issuer URL">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Issuer URL">
                 Issuer URL
               </label>
               <input type="url" name="oauth_issuer"
@@ -5412,8 +5410,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Client ID">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Client ID">
                 Client ID <span class="text-gray-500">(optional for DCR)</span>
               </label>
               <input type="text" name="oauth_client_id"
@@ -5426,8 +5423,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Client Secret">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Client Secret">
                 Client Secret <span class="text-gray-500">(optional for DCR)</span>
               </label>
               <input type="password" name="oauth_client_secret"
@@ -5440,8 +5436,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div id="oauth-username-field-a2a" style="display: none;">
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Username">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Username">
                 Username <span class="text-red-500">*</span> <span class="text-gray-500">(for password grant)</span>
               </label>
               <input type="text" name="oauth_username" id="oauth-username-a2a"
@@ -5453,8 +5448,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div id="oauth-password-field-a2a" style="display: none;">
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Password">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Password">
                 Password <span class="text-red-500">*</span> <span class="text-gray-500">(for password grant)</span>
               </label>
               <input type="password" name="oauth_password" id="oauth-password-a2a"
@@ -5466,20 +5460,17 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Token URL">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Token URL">
                 Token URL
               </label>
               <input type="url" name="oauth_token_url"
                 class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                data-i18n-placeholder="https://oauth.example.com/token"
-                placeholder="https://oauth.example.com/token" />
+                data-i18n-placeholder="https://oauth.example.com/token" placeholder="https://oauth.example.com/token" />
             </div>
 
             <div id="oauth-auth-code-fields-a2a">
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="Authorization URL">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Authorization URL">
                   Authorization URL
                 </label>
                 <input type="url" name="oauth_authorization_url"
@@ -5491,8 +5482,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="Redirect URI">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Redirect URI">
                   Redirect URI
                 </label>
                 <input type="url" name="oauth_redirect_uri"
@@ -5511,8 +5501,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="Token Management">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Token Management">
                   Token Management
                 </label>
                 <div class="mt-2 space-y-2">
@@ -5533,8 +5522,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </span>
                   </label>
                 </div>
-                <p class="mt-1 text-sm text-gray-500"
-                  data-i18n="Token management options for Authorization Code flow">
+                <p class="mt-1 text-sm text-gray-500" data-i18n="Token management options for Authorization Code flow">
                   Token management options for Authorization Code flow
                 </p>
               </div>
@@ -5554,20 +5542,18 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                       Authorization Code Flow Setup
                     </h3>
                     <div class="mt-2 text-sm text-blue-700 dark:text-blue-300">
-                      <p data-i18n="After creating this gateway, you'll need to:">After creating this gateway, you'll need to:</p>
+                      <p data-i18n="After creating this gateway, you'll need to:">After creating this gateway, you'll
+                        need to:</p>
                       <ol class="list-decimal list-inside mt-1 space-y-1">
-                        <li
-                          data-i18n="Click the \"🔐 Authorize\" button in the gateway list">
+                        <li data-i18n="Click the \" 🔐 Authorize\" button in the gateway list">
                           Click the "🔐 Authorize" button in the gateway
                           list
                         </li>
-                        <li
-                          data-i18n="Complete the OAuth consent flow with your provider">
+                        <li data-i18n="Complete the OAuth consent flow with your provider">
                           Complete the OAuth consent flow with your
                           provider
                         </li>
-                        <li
-                          data-i18n="Return to the admin panel to see authorization status">
+                        <li data-i18n="Return to the admin panel to see authorization status">
                           Return to the admin panel to see authorization
                           status
                         </li>
@@ -5584,8 +5570,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                data-i18n="Scopes">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Scopes">
                 Scopes
               </label>
               <input type="text" name="oauth_scopes"
@@ -5618,8 +5603,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               -->
         <!-- Description -->
         <div class="sm:col-span-2">
-          <label for="a2a-agent-description"
-            class="block text-sm font-medium text-gray-700 dark:text-gray-400" data-i18n="Description">Description</label>
+          <label for="a2a-agent-description" class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+            data-i18n="Description">Description</label>
           <textarea id="a2a-agent-description" name="description" rows="2"
             data-i18n-placeholder="Description of the agent's capabilities"
             placeholder="Description of the agent's capabilities"
@@ -5645,19 +5630,19 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               <input type="radio" name="visibility" value="public" id="a2a-visibility-public"
                 class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" checked />
               <label for="a2a-visibility-public" class="ml-2 text-sm text-gray-700 dark:text-gray-400">🌍<span
-                data-i18n="Public">Public</span></label>
+                  data-i18n="Public">Public</span></label>
             </div>
             <div class="flex items-center">
               <input type="radio" name="visibility" value="team" id="a2a-visibility-team"
                 class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" />
               <label for="a2a-visibility-team" class="ml-2 text-sm text-gray-700 dark:text-gray-400">👥<span
-                data-i18n="Team">Team</span></label>
+                  data-i18n="Team">Team</span></label>
             </div>
             <div class="flex items-center">
               <input type="radio" name="visibility" value="private" id="a2a-visibility-private"
                 class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" />
               <label for="a2a-visibility-private" class="ml-2 text-sm text-gray-700 dark:text-gray-400">🔒<span
-                data-i18n="Private">Private</span></label>
+                  data-i18n="Private">Private</span></label>
             </div>
           </div>
         </div>
@@ -5667,13 +5652,13 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             data-i18n="Passthrough Headers">
             Passthrough Headers
           </label>
-          <input type="text" name="passthrough_headers"
-            data-i18n-placeholder="Authorization, X-Tenant-Id, X-Trace-Id"
+          <input type="text" name="passthrough_headers" data-i18n-placeholder="Authorization, X-Tenant-Id, X-Trace-Id"
             placeholder="Authorization, X-Tenant-Id, X-Trace-Id"
             class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm
                         focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
           <small class="block mt-1 text-sm text-gray-500 dark:text-gray-400"
-            data-i18n="List of headers to pass through from client requests (comma-separated, e.g., \"Authorization, X-Tenant-Id, X-Trace-Id\"). Leave empty to use global defaults.">
+            data-i18n="List of headers to pass through from client requests (comma-separated, e.g., \" Authorization,
+            X-Tenant-Id, X-Trace-Id\"). Leave empty to use global defaults.">
             List of headers to pass through from client requests (comma-separated, e.g.,
             "Authorization, X-Tenant-Id, X-Trace-Id").
           </small>
@@ -5684,8 +5669,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         <span id="a2aFormError" class="sm:col-span-2 block text-sm font-semibold text-red-600 mt-2"></span>
 
         <!-- Loading Indicator -->
-        <div id="add-a2a-loading" class="hidden sm:col-span-2 text-sm text-gray-500 mt-2"
-          data-i18n="Submitting...">
+        <div id="add-a2a-loading" class="hidden sm:col-span-2 text-sm text-gray-500 mt-2" data-i18n="Submitting...">
           Submitting...
         </div>
 
@@ -5952,22 +5936,22 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 {{ root.name }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                <div class="grid grid-cols-2 gap-1 max-w-48">
+                <div class="flex flex-col gap-2 max-w-48">
                   <!-- Row 1: View | Edit -->
                   <button onclick="viewRoot('{{ root.uri }}')"
-                    class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/20 transition-colors"
+                    class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/20 transition-colors"
                     x-tooltip="'💡' + window.i18n.t('View root directory details and configuration')">
                     <span data-i18n="View">View</span>
                   </button>
                   <button onclick="editRoot('{{ root.uri }}')"
-                    class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-green-600 hover:text-green-900 hover:bg-green-50 dark:text-green-400 dark:hover:bg-green-900/20 transition-colors"
+                    class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-green-600 hover:text-green-900 hover:bg-green-50 dark:text-green-400 dark:hover:bg-green-900/20 transition-colors"
                     x-tooltip="'💡' + window.i18n.t('Edit root directory settings and configuration')">
                     <span data-i18n="Edit">Edit</span>
                   </button>
 
                   <!-- Row 2: Export | Delete -->
                   <button onclick="exportRoot('{{ root.uri }}')"
-                    class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-purple-600 hover:text-purple-900 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-900/20 transition-colors"
+                    class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-purple-600 hover:text-purple-900 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-900/20 transition-colors"
                     x-tooltip="'💡' + window.i18n.t('Export root directory configuration')">
                     <span data-i18n="Export">Export</span>
                   </button>
@@ -5975,7 +5959,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     onsubmit="return handleSubmitWithConfirmation(event, 'roots')">
                     <button type="submit"
                       x-tooltip="'💡' + window.i18n.t('Permanently delete this item – cannot be undone')"
-                      class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-red-600 hover:text-red-900 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20 transition-colors">
+                      class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-red-600 hover:text-red-900 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20 transition-colors">
                       <span data-i18n="Delete">Delete</span>
                     </button>
                   </form>
@@ -6316,7 +6300,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
   <div id="tool-validation-modal" class="fixed inset-0 hidden z-50 overflow-y-auto bg-black bg-opacity-50">
     <div class="relative bg-white dark:bg-gray-900 w-full max-w-3xl mx-auto my-10 rounded-lg shadow-lg p-6">
       <div class="flex justify-between items-center mb-4">
-        <h2 id="tool-validation-modal-title" class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+        <h2 id="tool-validation-modal-title" class="text-lg font-semibold text-gray-900 dark:text-gray-100"
+          data-i18n="Test Tool">
           Test Tool
         </h2>
         <button onclick="closeModal('tool-validation-modal')"
@@ -6329,7 +6314,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
       <div id="tool-validation-form-fields" class="space-y-4 max-h-[70vh] overflow-y-auto"></div>
       <button type="button" onclick="closeModal('tool-validation-modal', 'tool-validation-result')"
-        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300">
+        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300"
+        data-i18n="Close">
         Close
       </button>
     </div>
@@ -6354,7 +6340,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <h3 id="tool-test-modal-title" class="text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 id="tool-test-modal-title" class="text-lg font-medium text-gray-900 dark:text-gray-100"
+            data-i18n="Test Tool">
             Test Tool
           </h3>
           <!-- New container to show the tool's description -->
@@ -6365,11 +6352,12 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
             <div class="mt-4 border-t pt-4">
               <div>
-                <label for="test-passthrough-headers"
-                  class="block text-sm font-medium text-gray-700 dark:text-gray-400">
+                <label for="test-passthrough-headers" class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                  data-i18n="Passthrough Headers (Optional)">
                   Passthrough Headers (Optional)
                 </label>
-                <small class="text-gray-500 dark:text-gray-400 block mb-2">
+                <small class="text-gray-500 dark:text-gray-400 block mb-2"
+                  data-i18n="Additional headers to send with the request (format: &quot;Header-Name: Value&quot;, one per line)">
                   Additional headers to send with the request (format:
                   "Header-Name: Value", one per line)
                 </small>
@@ -6380,7 +6368,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
             </div>
             <div class="mt-4">
               <button type="button" onclick="runToolTest()"
-                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                data-i18n="Run Tool">
                 Run Tool
               </button>
             </div>
@@ -6412,7 +6401,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100" data-i18n="Edit Tool">
             Edit Tool
           </h3>
           <div class="mt-4">
@@ -6421,36 +6410,42 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <input type="hidden" name="name" id="edit-tool-name" />
 
                 <div class="relative">
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                    for="edit-tool-custom-name">Name</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="edit-tool-custom-name"
+                    data-i18n="Name">Name</label>
                   <input type="text" name="customName" required id="edit-tool-custom-name"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible">
+                  <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
+                    data-i18n="Name is required.">
                     Name is required.</p>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Display Name</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Display Name">Display Name</label>
                   <input type="text" name="displayName" id="edit-tool-display-name"
                     placeholder="Custom display name for your UI"
+                    data-i18n-placeholder="Custom display name for your UI"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                 </div>
 
                 <div class="relative">
-                  <label for="edit-tool-url"
-                    class="block text-sm font-medium text-gray-700 dark:text-gray-300">URL</label>
+                  <label for="edit-tool-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="URL">URL</label>
                   <input type="url" name="url" required id="edit-tool-url"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible">
+                  <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
+                    data-i18n="URL is required.">
                     URL is required.</p>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Description">Description</label>
                   <textarea name="description" id="edit-tool-description"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></textarea>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Integration Type</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Integration Type">Integration Type</label>
                   <select name="integrationType" id="edit-tool-type"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
                     onchange="handleEditIntegrationTypeChange()">
@@ -6459,59 +6454,70 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Request Type</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Request Type">Request Type</label>
                   <select name="requestType" id="edit-tool-request-type"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></select>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Headers (JSON)</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Headers (JSON)">Headers (JSON)</label>
                   <textarea name="headers" id="edit-tool-headers"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></textarea>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Input Schema (JSON)</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Input Schema (JSON)">Input Schema (JSON)</label>
                   <textarea name="input_schema" id="edit-tool-schema"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></textarea>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Output Schema (JSON)</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Output Schema (JSON)">Output Schema (JSON)</label>
                   <textarea name="output_schema" id="edit-tool-output-schema"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
                     placeholder="{&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;}"></textarea>
-                  <p class="mt-1 text-xs text-gray-500 dark:text-indigo-300">
+                  <p class="mt-1 text-xs text-gray-500 dark:text-indigo-300"
+                    data-i18n="Optional JSON Schema for validating structured tool output. Per MCP spec, servers should return structured results that conform to this schema.">
                     Optional JSON Schema for validating structured tool output. Per MCP spec, servers should return
                     structured results that conform to this schema.
                   </p>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Annotations (JSON)</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Annotations (JSON)">Annotations (JSON)</label>
                   <textarea name="annotations" id="edit-tool-annotations"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm text-gray-900 placeholder-gray-600 dark:placeholder-gray-400 bg-white dark:bg-gray-800"
-                    placeholder="Annotations are generally provided by the MCP servers"></textarea>
-                  <p class="mt-1 text-xs text-gray-500 dark:text-indigo-300">
+                    placeholder="Annotations are generally provided by the MCP servers"
+                    data-i18n-placeholder="Annotations are generally provided by the MCP servers"></textarea>
+                  <p class="mt-1 text-xs text-gray-500 dark:text-indigo-300"
+                    data-i18n="Annotations like readOnlyHint, destructiveHint are generally provided by the MCP server.">
                     Annotations like readOnlyHint, destructiveHint are
                     generally provided by the MCP server.
                   </p>
                 </div>
                 <!-- Authentication Section -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Authentication Type</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Authentication Type">Authentication Type</label>
                   <select name="auth_type" id="edit-auth-type"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                    <option value="">None</option>
-                    <option value="basic">Basic</option>
-                    <option value="bearer">Bearer Token</option>
-                    <option value="authheaders">Custom Headers</option>
+                    <option value="" data-i18n="None">None</option>
+                    <option value="basic" data-i18n="Basic">Basic</option>
+                    <option value="bearer" data-i18n="Bearer Token">Bearer Token</option>
+                    <option value="authheaders" data-i18n="Custom Headers">Custom Headers</option>
                   </select>
                 </div>
                 <div id="edit-auth-basic-fields" style="display: none">
                   <div class="relative">
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Username</label>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Username">Username</label>
                     <input type="text" name="auth_username" id="edit-auth-username"
                       class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Password">Password</label>
                     <input type="password" name="auth_password" id="edit-auth-password"
                       class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
                       placeholder="********" />
@@ -6519,7 +6525,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 </div>
                 <div id="edit-auth-bearer-fields" style="display: none">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Token</label>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Token">Token</label>
                     <input type="password" name="auth_token" id="edit-auth-token"
                       class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
                       placeholder="********" />
@@ -6529,11 +6536,13 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               <div id="edit-auth-headers-fields" style="display: none">
                 <div class="space-y-3">
                   <div class="flex items-center justify-between">
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Custom Headers">
                       Custom Headers
                     </label>
                     <button type="button" onclick="addAuthHeader('edit-auth-headers-container')"
-                      class="inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      class="inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      data-i18n="Add Header">
                       <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -6549,50 +6558,55 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               </div>
               <!-- Tags Section -->
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tags</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Tags">Tags</label>
                 <input type="text" name="tags" id="edit-tool-tags"
                   placeholder="e.g., api,data-processing,external (comma-separated)"
+                  data-i18n-placeholder="e.g., api,data-processing,external (comma-separated)"
                   class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400"
+                  data-i18n="Enter tags separated by commas. Tags help categorize and filter tools.">
                   Enter tags separated by commas. Tags help categorize and
                   filter tools.
                 </p>
               </div>
               <!-- Visibility options -->
               <div id="edit-tool-visibility" class="mt-4">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">Visibility</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                  data-i18n="Visibility">Visibility</label>
                 <div class="flex gap-x-6 mt-2">
                   <!-- Add gap-x-6 for more space between radio options -->
                   <div class="flex items-center">
                     <input type="radio" name="visibility" value="public"
                       class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                       id="edit-tool-visibility-public" />
-                    <label for="edit-tool-visibility-public"
-                      class="ml-2 text-sm text-gray-700 dark:text-gray-400">🌍Public</label>
+                    <label for="edit-tool-visibility-public" class="ml-2 text-sm text-gray-700 dark:text-gray-400"
+                      data-i18n="🌍Public">🌍Public</label>
                   </div>
                   <div class="flex items-center">
                     <input type="radio" name="visibility" value="team"
                       class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                       id="edit-tool-visibility-team" />
-                    <label for="edit-tool-visibility-team"
-                      class="ml-2 text-sm text-gray-700 dark:text-gray-400">👥Team</label>
+                    <label for="edit-tool-visibility-team" class="ml-2 text-sm text-gray-700 dark:text-gray-400"
+                      data-i18n="👥Team">👥Team</label>
                   </div>
                   <div class="flex items-center">
                     <input type="radio" name="visibility" value="private"
                       class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                       id="edit-tool-visibility-private" />
-                    <label for="edit-tool-visibility-private"
-                      class="ml-2 text-sm text-gray-700 dark:text-gray-400">🔒Private</label>
+                    <label for="edit-tool-visibility-private" class="ml-2 text-sm text-gray-700 dark:text-gray-400"
+                      data-i18n="🔒Private">🔒Private</label>
                   </div>
                 </div>
               </div>
               <div class="mt-6 flex justify-end space-x-3 bg-white dark:bg-gray-900 dark:text-gray-100">
                 <button type="button" onclick="closeModal('tool-edit-modal')"
-                  class="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-300">
+                  class="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-300"
+                  data-i18n="Cancel">
                   Cancel
                 </button>
                 <button type="submit"
-                  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  data-i18n="Save Changes">
                   Save Changes
                 </button>
               </div>
@@ -6612,14 +6626,15 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100" data-i18n="Resource Details">
             Resource Details
           </h3>
           <div class="mt-4 space-y-4 bg-white dark:bg-gray-400" id="resource-details"></div>
         </div>
         <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
           <button type="button" onclick="closeModal('resource-modal')"
-            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300">
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300"
+            data-i18n="Close">
             Close
           </button>
         </div>
@@ -6811,7 +6826,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100" data-i18n="Prompt Details">
             Prompt Details
           </h3>
           <div class="mt-4 space-y-4 bg-white dark:bg-gray-900" id="prompt-details"></div>
@@ -7022,21 +7037,23 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
   <div id="gateway-test-modal"
     class="fixed z-50 inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
     <div class="bg-white dark:bg-gray-900 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg p-6">
-      <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+      <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100" data-i18n="Test Gateway Connectivity">
         Test Gateway Connectivity
       </h2>
       <form id="gateway-test-form" class="space-y-4 text-gray-800 dark:text-gray-100" novalidate>
         <div class="relative">
-          <label for="gateway-test-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Server
+          <label for="gateway-test-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            data-i18n="Server URL">Server
             URL</label>
           <input required name="url" type="text" id="gateway-test-url"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-gray-200 dark:bg-gray-800" />
-          <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible">Server
+          <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
+            data-i18n="Server URL is required.">Server
             URL is required.</p>
         </div>
         <div>
-          <label for="gateway-test-method"
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300">Method</label>
+          <label for="gateway-test-method" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            data-i18n="Method">Method</label>
           <select required name="method" id="gateway-test-method"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-gray-200 dark:bg-gray-800">
             <option>GET</option>
@@ -7047,21 +7064,24 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
           </select>
         </div>
         <div>
-          <label for="gateway-test-path" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Path</label>
-          <input id="gateway-test-path" name="path" type="text" placeholder="/health"
+          <label for="gateway-test-path" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            data-i18n="Path">Path</label>
+          <input id="gateway-test-path" name="path" type="text" placeholder="/health" data-i18n-placeholder="/health"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-gray-200 dark:bg-gray-800" />
         </div>
         <div>
-          <label for="gateway-test-headers" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Headers
+          <label for="gateway-test-headers" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            data-i18n="Headers (JSON)">Headers
             (JSON)</label>
           <textarea id="gateway-test-headers"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300 placeholder-gray-600 dark:placeholder-gray-400"
-            placeholder="Enter request headers as JSON"></textarea>
+            placeholder="Enter request headers as JSON"
+            data-i18n-placeholder="Enter request headers as JSON"></textarea>
         </div>
 
         <div>
-          <label for="gateway-test-content-type"
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300">Content-Type</label>
+          <label for="gateway-test-content-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            data-i18n="Content-Type">Content-Type</label>
           <select id="gateway-test-content-type" name="content_type"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-gray-200 dark:bg-gray-800"
             onchange="updateBodyLabel()">
@@ -7072,20 +7092,21 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
         <div>
           <label for="gateway-test-body" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            id="gateway-test-body-label">Body (JSON)</label>
+            id="gateway-test-body-label" data-i18n="Body (JSON)">Body (JSON)</label>
           <textarea id="gateway-test-body" name="body"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300 placeholder-gray-600 dark:placeholder-gray-400"
-            placeholder="Enter request body as JSON"></textarea>
+            placeholder="Enter request body as JSON" data-i18n-placeholder="Enter request body as JSON"></textarea>
         </div>
 
         <div class="flex">
           <button type="submit" id="gateway-test-submit"
-            class="w-full text-center px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+            class="w-full text-center px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700" data-i18n="Test">
             Test
           </button>
           <p class="p-1"></p>
           <button id="gateway-test-close" type="button"
-            class="w-full text-center px-3 py-1 border border-blue-600 rounded bg-white text-gray-700 hover:bg-gray-200">
+            class="w-full text-center px-3 py-1 border border-blue-600 rounded bg-white text-gray-700 hover:bg-gray-200"
+            data-i18n="Close">
             Close
           </button>
         </div>
@@ -7095,7 +7116,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         </div>
 
         <div id="gateway-test-result" class="hidden">
-          <label class="block text-sm font-medium text-gray-700">Response</label>
+          <label class="block text-sm font-medium text-gray-700" data-i18n="Response">Response</label>
           <div id="gateway-test-response-json"
             class="bg-gray-100 p-2 rounded overflow-auto text-sm text-gray-800 max-h-64"></div>
         </div>
@@ -7137,16 +7158,18 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     URL is required.</p>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">Description</label>
+                  <label class="block text-sm font-medium text-gray-700" data-i18n="Description">Description</label>
                   <textarea name="description" id="edit-gateway-description"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></textarea>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">Tags</label>
+                  <label class="block text-sm font-medium text-gray-700" data-i18n="Tags">Tags</label>
                   <input type="text" name="tags" id="edit-gateway-tags"
                     placeholder="e.g., production,external,api-gateway (comma-separated)"
+                    data-i18n-placeholder="e.g., production,external,api-gateway (comma-separated)"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p class="mt-1 text-sm text-gray-500">
+                  <p class="mt-1 text-sm text-gray-500"
+                    data-i18n="Separate multiple tags with commas. Tags will be automatically normalized.">
                     Separate multiple tags with commas. Tags will be
                     automatically normalized.
                   </p>
@@ -7154,7 +7177,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
                 <!-- Visibility options -->
                 <div id="edit-gateway-visibility" class="mt-4">
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">Visibility</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                    data-i18n="Visibility">Visibility</label>
                   <div class="flex gap-x-6 mt-2">
                     <!-- Add gap-x-6 for more space between radio options -->
                     <div class="flex items-center">
@@ -7162,62 +7186,73 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-gateway-visibility-public" />
                       <label for="edit-gateway-visibility-public"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">🌍Public</label>
+                        class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Public">🌍Public</span></label>
                     </div>
                     <div class="flex items-center">
                       <input type="radio" name="visibility" value="team"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-gateway-visibility-team" />
                       <label for="edit-gateway-visibility-team"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">👥Team</label>
+                        class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Team">👥Team</span></label>
                     </div>
                     <div class="flex items-center">
                       <input type="radio" name="visibility" value="private"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-gateway-visibility-private" />
                       <label for="edit-gateway-visibility-private"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">🔒Private</label>
+                        class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Private">🔒Private</span></label>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">Transport Type</label>
+                  <label class="block text-sm font-medium text-gray-700" data-i18n="Transport Type">Transport
+                    Type</label>
                   <select name="transport" id="edit-gateway-transport"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                    <option value="SSE" selected>SSE</option>
-                    <option value="STREAMABLEHTTP">Streamable HTTP</option>
+                    <option value="SSE" selected data-i18n="SSE">SSE</option>
+                    <option value="STREAMABLEHTTP" data-i18n="Streamable HTTP">Streamable HTTP</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">Authentication Type</label>
+                  <label class="block text-sm font-medium text-gray-700" data-i18n="Authentication Type">Authentication
+                    Type</label>
                   <select name="auth_type" id="auth-type-gw-edit"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                    <option value="">None</option>
-                    <option value="basic">Basic</option>
-                    <option value="bearer">Bearer Token</option>
-                    <option value="authheaders">Custom Headers</option>
-                    <option value="oauth">OAuth 2.0</option>
-                    <option value="query_param">Query Parameter (INSECURE)</option>
+                    <option value="" data-i18n="None">None</option>
+                    <option value="basic" data-i18n="Basic">Basic</option>
+                    <option value="bearer" data-i18n="Bearer Token">Bearer Token</option>
+                    <option value="authheaders" data-i18n="Custom Headers">Custom Headers</option>
+                    <option value="oauth" data-i18n="OAuth 2.0">OAuth 2.0</option>
+                    <option value="query_param" data-i18n="Query Parameter (INSECURE)">Query Parameter (INSECURE)
+                    </option>
                   </select>
                 </div>
                 <div id="auth-query_param-fields-gw-edit" style="display: none">
                   <div
                     class="p-3 mb-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-300 dark:border-amber-700 rounded-md">
                     <p class="text-xs text-amber-700 dark:text-amber-400">
-                      <strong>Security Warning:</strong> API keys in URLs may appear in proxy logs, browser history, and
-                      server access logs.
-                      Only use when the upstream server requires this authentication method.
+                      <strong><span data-i18n="Security Warning:">Security Warning:</span></strong> <span
+                        data-i18n="API keys in URLs may appear in proxy logs, browser history, and server access logs. Only use when the upstream server requires this authentication method.">API
+                        keys in URLs may appear in proxy logs, browser history, and
+                        server access logs.
+                        Only use when the upstream server requires this authentication method.</span>
                     </p>
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Query Parameter
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Query Parameter Name">Query Parameter
                       Name</label>
                     <input type="text" name="auth_query_param_key" placeholder="e.g., tavilyApiKey"
+                      data-i18n-placeholder="e.g., tavilyApiKey"
                       class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                   </div>
                   <div class="mt-2">
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">API Key Value</label>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="API Key Value">API Key Value</label>
                     <div class="relative">
                       <input type="password" name="auth_query_param_value" id="auth-query-param-value-gw-edit"
                         data-sensitive-label="API key"
@@ -7226,19 +7261,19 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                         class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-medium text-indigo-600 hover:text-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-indigo-300"
                         onclick="toggleInputMask('auth-query-param-value-gw-edit', this)" aria-pressed="false"
                         aria-label="Show API key">
-                        Show
+                        <span data-i18n="Show">Show</span>
                       </button>
                     </div>
                   </div>
                 </div>
                 <div id="auth-basic-fields-gw-edit" style="display: none">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">Username</label>
+                    <label class="block text-sm font-medium text-gray-700" data-i18n="Username">Username</label>
                     <input type="text" name="auth_username"
                       class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <label class="block text-sm font-medium text-gray-700" data-i18n="Password">Password</label>
                     <div class="relative">
                       <input type="password" name="auth_password" id="auth-password-gw-edit"
                         data-sensitive-label="password"
@@ -7247,14 +7282,14 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                         class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-medium text-indigo-600 hover:text-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-indigo-300"
                         onclick="toggleInputMask('auth-password-gw-edit', this)" aria-pressed="false"
                         aria-label="Show password">
-                        Show
+                        <span data-i18n="Show">Show</span>
                       </button>
                     </div>
                   </div>
                 </div>
                 <div id="auth-bearer-fields-gw-edit" style="display: none">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">Token</label>
+                    <label class="block text-sm font-medium text-gray-700" data-i18n="Token">Token</label>
                     <div class="relative">
                       <input type="password" name="auth_token" id="auth-token-gw-edit" data-sensitive-label="token"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300 pr-16" />
@@ -7262,7 +7297,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                         class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-medium text-indigo-600 hover:text-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-indigo-300"
                         onclick="toggleInputMask('auth-token-gw-edit', this)" aria-pressed="false"
                         aria-label="Show token">
-                        Show
+                        <span data-i18n="Show">Show</span>
                       </button>
                     </div>
                   </div>
@@ -7270,7 +7305,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <div id="auth-headers-fields-gw-edit" style="display: none">
                   <div class="space-y-3">
                     <div class="flex items-center justify-between">
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        data-i18n="Custom Headers">
                         Custom Headers
                       </label>
                       <button type="button" onclick="addAuthHeader('auth-headers-container-gw-edit')"
@@ -7279,7 +7315,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
-                        Add Header
+                        <span data-i18n="Add Header">Add Header</span>
                       </button>
                     </div>
                     <div id="auth-headers-container-gw-edit" class="space-y-2">
@@ -7293,135 +7329,155 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <div id="auth-oauth-fields-gw-edit" style="display: none">
                   <div class="space-y-4">
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Grant Type">
                         Grant Type
                       </label>
                       <select name="oauth_grant_type" id="oauth-grant-type-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                        <option value="authorization_code" selected>
+                        <option value="authorization_code" selected data-i18n="Authorization Code (User Delegation)">
                           Authorization Code (User Delegation)
                         </option>
-                        <option value="client_credentials">
+                        <option value="client_credentials" data-i18n="Client Credentials (Machine-to-Machine)">
                           Client Credentials (Machine-to-Machine)
                         </option>
-                        <option value="password">
+                        <option value="password" data-i18n="Resource Owner Password Credentials (Keycloak/Legacy)">
                           Resource Owner Password Credentials (Keycloak/Legacy)
                         </option>
                       </select>
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Issuer URL">
                         Issuer URL
                       </label>
                       <input type="url" name="oauth_issuer" id="oauth-issuer-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="http://localhost:3003 or https://oauth.example.com" />
-                      <p class="mt-1 text-sm text-gray-500">
+                        placeholder="http://localhost:3003 or https://oauth.example.com"
+                        data-i18n-placeholder="http://localhost:3003 or https://oauth.example.com" />
+                      <p class="mt-1 text-sm text-gray-500"
+                        data-i18n="The OAuth Authorization Server issuer URL. Required for DCR.">
                         The OAuth Authorization Server issuer URL. Required for DCR.
                       </p>
                     </div>
 
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Client ID <span class="text-gray-500">(optional for DCR)</span>
+                        <span data-i18n="Client ID">Client ID</span> <span class="text-gray-500"
+                          data-i18n="(optional for DCR)">(optional for DCR)</span>
                       </label>
                       <input type="text" name="oauth_client_id" id="oauth-client-id-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="Leave empty for auto-registration via DCR" />
-                      <p class="mt-1 text-sm text-blue-600">
+                        placeholder="Leave empty for auto-registration via DCR"
+                        data-i18n-placeholder="Leave empty for auto-registration via DCR" />
+                      <p class="mt-1 text-sm text-blue-600"
+                        data-i18n="💡 Leave empty if the server supports DCR - credentials will be auto-registered">
                         💡 Leave empty if the server supports DCR - credentials will be auto-registered
                       </p>
                     </div>
 
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Client Secret <span class="text-gray-500">(optional for DCR)</span>
+                        <span data-i18n="Client Secret">Client Secret</span> <span class="text-gray-500"
+                          data-i18n="(optional for DCR)">(optional for DCR)</span>
                       </label>
                       <input type="password" name="oauth_client_secret" id="oauth-client-secret-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="Leave empty for auto-registration via DCR" />
-                      <p class="mt-1 text-sm text-gray-500">
+                        placeholder="Leave empty for auto-registration via DCR"
+                        data-i18n-placeholder="Leave empty for auto-registration via DCR" />
+                      <p class="mt-1 text-sm text-gray-500"
+                        data-i18n="Leave blank to retain the current secret (when editing).">
                         Leave blank to retain the current secret (when editing).
                       </p>
-                      <p class="mt-1 text-sm text-blue-600">
+                      <p class="mt-1 text-sm text-blue-600"
+                        data-i18n="💡 Leave empty if the server supports DCR - credentials will be auto-registered">
                         💡 Leave empty if the server supports DCR - credentials will be auto-registered
                       </p>
                     </div>
 
                     <div id="oauth-username-field-gw-edit" style="display: none;">
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Username <span class="text-red-500">*</span> <span class="text-gray-500">(for password
-                          grant)</span>
+                        <span data-i18n="Username">Username</span> <span class="text-red-500">*</span> <span
+                          class="text-gray-500" data-i18n="(for password grant)">(for password grant)</span>
                       </label>
                       <input type="text" name="oauth_username" id="oauth-username-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="systemadmin@system.com" />
-                      <p class="mt-1 text-sm text-gray-500">
+                        placeholder="systemadmin@system.com" data-i18n-placeholder="systemadmin@system.com" />
+                      <p class="mt-1 text-sm text-gray-500"
+                        data-i18n="Required for Resource Owner Password Credentials grant type (Keycloak).">
                         Required for Resource Owner Password Credentials grant type (Keycloak).
                       </p>
                     </div>
 
                     <div id="oauth-password-field-gw-edit" style="display: none;">
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Password <span class="text-red-500">*</span> <span class="text-gray-500">(for password
-                          grant)</span>
+                        <span data-i18n="Password">Password</span> <span class="text-red-500">*</span> <span
+                          class="text-gray-500" data-i18n="(for password grant)">(for password grant)</span>
                       </label>
                       <input type="password" name="oauth_password" id="oauth-password-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="Enter password" />
-                      <p class="mt-1 text-sm text-gray-500">
+                        placeholder="Enter password" data-i18n-placeholder="Enter password" />
+                      <p class="mt-1 text-sm text-gray-500"
+                        data-i18n="Required for Resource Owner Password Credentials grant type (Keycloak).">
                         Required for Resource Owner Password Credentials grant type (Keycloak).
                       </p>
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Token URL">
                         Token URL
                       </label>
                       <input type="url" name="oauth_token_url" id="oauth-token-url-gw-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                        placeholder="https://oauth.example.com/token" />
+                        placeholder="https://oauth.example.com/token"
+                        data-i18n-placeholder="https://oauth.example.com/token" />
                     </div>
 
                     <div id="oauth-auth-code-fields-gw-edit">
                       <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                          data-i18n="Authorization URL">
                           Authorization URL
                         </label>
                         <input type="url" name="oauth_authorization_url" id="oauth-authorization-url-gw-edit"
                           class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                          placeholder="https://oauth.example.com/authorize" />
-                        <p class="mt-1 text-sm text-gray-500">
+                          placeholder="https://oauth.example.com/authorize"
+                          data-i18n-placeholder="https://oauth.example.com/authorize" />
+                        <p class="mt-1 text-sm text-gray-500"
+                          data-i18n="The OAuth provider's authorization endpoint URL">
                           The OAuth provider's authorization endpoint URL
                         </p>
                       </div>
 
                       <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                          data-i18n="Redirect URI">
                           Redirect URI
                         </label>
                         <input type="url" name="oauth_redirect_uri" id="oauth-redirect-uri-gw-edit"
                           class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                          placeholder="https://gateway.example.com/oauth/callback" />
-                        <p class="mt-1 text-sm text-gray-500">
+                          placeholder="https://gateway.example.com/oauth/callback"
+                          data-i18n-placeholder="https://gateway.example.com/oauth/callback" />
+                        <p class="mt-1 text-sm text-gray-500"
+                          data-i18n="This must match the redirect URI configured in your OAuth application">
                           This must match the redirect URI configured in
                           your OAuth application
                         </p>
                         <p class="mt-1 text-sm text-blue-600 font-medium">
-                          💡 Use:
+                          <span data-i18n="💡 Use:">💡 Use:</span>
                           <code class="bg-blue-100 px-1 rounded">http://localhost:4444/oauth/callback</code>
                         </p>
                       </div>
 
                       <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Scopes">
                           Scopes
                         </label>
                         <input type="text" name="oauth_scopes" id="oauth-scopes-gw-edit"
                           class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
-                          placeholder="repo read:user (space-separated)" />
-                        <p class="mt-1 text-sm text-gray-500">
+                          placeholder="repo read:user (space-separated)"
+                          data-i18n-placeholder="repo read:user (space-separated)" />
+                        <p class="mt-1 text-sm text-gray-500"
+                          data-i18n="Space-separated list of OAuth scopes (e.g., &quot;repo read:user&quot;)">
                           Space-separated list of OAuth scopes (e.g., "repo
                           read:user")
                         </p>
@@ -7433,37 +7489,45 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                   <label class="flex items-center">
                     <input type="checkbox" name="one_time_auth" id="single-use-auth-gw-edit"
                       class="form-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600"
-                      x-tooltip="'💡This will not store the server credentials, Some features may not work.'"
+                      x-tooltip="'💡' + window.i18n.t('This will not store the server credentials, Some features may not work.')"
                       onchange="document.getElementById('single-use-auth-hint-gw-edit').style.display = this.checked ? 'block' : 'none'" />
-                    <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                      data-i18n="Use one-time authentication">
                       Use one-time authentication
                     </span>
                   </label>
                   <p id="single-use-auth-hint-gw-edit" style="display: none"
                     class="mt-2 text-sm text-gray-700 dark:text-gray-300 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-md p-2">
-                    ⚠️ NOTE: Authentication won't be stored in the gateway. Configure Passthrough headers for reuse.
-                    Health checks will be disabled.
+                    <span
+                      data-i18n="⚠️ NOTE: Authentication won't be stored in the gateway. Configure Passthrough headers for reuse. Health checks will be disabled.">⚠️
+                      NOTE: Authentication won't be stored in the gateway. Configure Passthrough headers for reuse.
+                      Health checks will be disabled.</span>
                   </p>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">Passthrough Headers</label>
-                  <small class="text-gray-500 dark:text-gray-400 block mb-2">
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                    data-i18n="Passthrough Headers">Passthrough Headers</label>
+                  <small class="text-gray-500 dark:text-gray-400 block mb-2"
+                    data-i18n="List of headers to pass through from client requests (comma-separated, e.g., &quot;Authorization, X-Tenant-Id, X-Trace-Id&quot;). Leave empty to use global defaults.">
                     List of headers to pass through from client requests
                     (comma-separated, e.g., "Authorization, X-Tenant-Id,
                     X-Trace-Id"). Leave empty to use global defaults.
                   </small>
                   <input type="text" name="passthrough_headers" id="edit-gateway-passthrough-headers"
                     placeholder="Authorization, X-Tenant-Id, X-Trace-Id"
+                    data-i18n-placeholder="Authorization, X-Tenant-Id, X-Trace-Id"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                 </div>
               </div>
               <div class="mt-6 flex justify-end space-x-3 bg-white dark:bg-gray-900 dark:text-gray-100">
                 <button type="button" onclick="closeModal('gateway-edit-modal')"
-                  class="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-300">
+                  class="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-300"
+                  data-i18n="Cancel">
                   Cancel
                 </button>
                 <button type="submit"
-                  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  data-i18n="Save Changes">
                   Save Changes
                 </button>
               </div>
@@ -7496,8 +7560,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     Agent Name
                   </label>
                   <input type="text" id="a2a-agent-name-edit" name="name" required
-                    data-i18n-placeholder="my-assistant-agent"
-                    placeholder="my-assistant-agent"
+                    data-i18n-placeholder="my-assistant-agent" placeholder="my-assistant-agent"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm
                                 focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                   <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
@@ -7508,13 +7571,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <!-- Endpoint URL -->
                 <div class="relative">
                   <label for="a2a-agent-endpoint-url-edit"
-                    class="block text-sm font-medium text-gray-700 dark:text-gray-400"
-                    data-i18n="Endpoint URL">
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-400" data-i18n="Endpoint URL">
                     Endpoint URL
                   </label>
                   <input type="url" id="a2a-agent-endpoint-url-edit" name="endpoint_url" required
-                    data-i18n-placeholder="https://api.example.com/agent"
-                    placeholder="https://api.example.com/agent"
+                    data-i18n-placeholder="https://api.example.com/agent" placeholder="https://api.example.com/agent"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm
                                 focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                   <p data-error-message-for="url" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
@@ -7635,30 +7696,25 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <div id="auth-oauth-fields-a2a-edit" style="display: none">
                   <div class="space-y-4">
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Grant Type">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Grant Type">
                         Grant Type
                       </label>
                       <select name="oauth_grant_type" id="oauth-grant-type-a2a-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300">
-                        <option value="authorization_code" selected
-                          data-i18n="Authorization Code (User Delegation)">
+                        <option value="authorization_code" selected data-i18n="Authorization Code (User Delegation)">
                           Authorization Code (User Delegation)
                         </option>
-                        <option value="client_credentials"
-                          data-i18n="Client Credentials (Machine-to-Machine)">
+                        <option value="client_credentials" data-i18n="Client Credentials (Machine-to-Machine)">
                           Client Credentials (Machine-to-Machine)
                         </option>
-                        <option value="password"
-                          data-i18n="Resource Owner Password Credentials (Keycloak/Legacy)">
+                        <option value="password" data-i18n="Resource Owner Password Credentials (Keycloak/Legacy)">
                           Resource Owner Password Credentials (Keycloak/Legacy)
                         </option>
                       </select>
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Issuer URL">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Issuer URL">
                         Issuer URL
                       </label>
                       <input type="url" name="oauth_issuer"
@@ -7675,8 +7731,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Client ID">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Client ID">
                         Client ID <span class="text-gray-500">(optional for DCR)</span>
                       </label>
                       <input type="text" name="oauth_client_id" id="oauth-client-id-a2a-edit"
@@ -7711,8 +7766,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </div>
 
                     <div id="oauth-username-field-a2a-edit" style="display: none;">
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Username">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Username">
                         Username <span class="text-red-500">*</span> <span class="text-gray-500">(for password
                           grant)</span>
                       </label>
@@ -7729,8 +7783,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </div>
 
                     <div id="oauth-password-field-a2a-edit" style="display: none;">
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Password">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Password">
                         Password <span class="text-red-500">*</span> <span class="text-gray-500">(for password
                           grant)</span>
                       </label>
@@ -7747,8 +7800,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Token URL">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Token URL">
                         Token URL
                       </label>
                       <input type="url" name="oauth_token_url" id="oauth-token-url-a2a-edit"
@@ -7795,16 +7847,15 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                     </div>
 
                     <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        data-i18n="Scopes">
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Scopes">
                         Scopes
                       </label>
                       <input type="text" name="oauth_scopes" id="oauth-scopes-a2a-edit"
                         class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"
                         data-i18n-placeholder="repo read:user (space-separated)"
                         placeholder="repo read:user (space-separated)" />
-                      <p class="mt-1 text-sm text-gray-500"
-                        data-i18n="Space-separated list of OAuth scopes (e.g., \"repo read:user\")">
+                      <p class="mt-1 text-sm text-gray-500" data-i18n="Space-separated list of OAuth scopes (e.g., \"
+                        repo read:user\")">
                         Space-separated list of OAuth scopes (e.g., "repo
                         read:user")
                       </p>
@@ -7815,8 +7866,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                 <!-- Description -->
                 <div>
                   <label for="a2a-agent-description-edit"
-                    class="block text-sm font-medium text-gray-700 dark:text-gray-400"
-                    data-i18n="Description">
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-400" data-i18n="Description">
                     Description
                   </label>
                   <textarea id="a2a-agent-description-edit" name="description" rows="2"
@@ -7848,19 +7898,19 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                       <input type="radio" name="visibility" value="public" id="a2a-visibility-public-edit"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" checked />
                       <span class="ml-2 text-sm text-gray-700 dark:text-gray-400">🌍<span
-                        data-i18n="Public">Public</span></span>
+                          data-i18n="Public">Public</span></span>
                     </label>
                     <label class="flex items-center">
                       <input type="radio" name="visibility" value="team" id="a2a-visibility-team-edit"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" />
                       <span class="ml-2 text-sm text-gray-700 dark:text-gray-400">👥<span
-                        data-i18n="Team">Team</span></span>
+                          data-i18n="Team">Team</span></span>
                     </label>
                     <label class="flex items-center">
                       <input type="radio" name="visibility" value="private" id="a2a-visibility-private-edit"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600" />
                       <span class="ml-2 text-sm text-gray-700 dark:text-gray-400">🔒<span
-                        data-i18n="Private">Private</span></span>
+                          data-i18n="Private">Private</span></span>
                     </label>
                   </div>
                 </div>
@@ -7869,7 +7919,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
                   <label class="block text-sm font-medium text-gray-700 dark:text-gray-400"
                     data-i18n="Passthrough Headers">Passthrough Headers</label>
                   <small class="text-gray-500 dark:text-gray-400 block mb-2"
-                    data-i18n="List of headers to pass through from client requests (comma-separated, e.g., \"Authorization, X-Tenant-Id, X-Trace-Id\"). Leave empty to use global defaults.">
+                    data-i18n="List of headers to pass through from client requests (comma-separated, e.g., \"
+                    Authorization, X-Tenant-Id, X-Trace-Id\"). Leave empty to use global defaults.">
                     List of headers to pass through from client requests
                     (comma-separated, e.g., "Authorization, X-Tenant-Id,
                     X-Trace-Id"). Leave empty to use global defaults.
@@ -7948,39 +7999,48 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               <div class="grid grid-cols-1 gap-7">
                 <!-- Existing fields -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">UUID</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="UUID">UUID</label>
                   <input type="text" name="id" id="edit-server-id"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                  <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"
+                    data-i18n="Changing UUID will create a new server endpoint. Use with caution.">
                     Changing UUID will create a new server endpoint. Use
                     with caution.
                   </p>
                 </div>
                 <div class="relative">
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Name">Name</label>
                   <input type="text" name="name" required id="edit-server-name"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible">
+                  <p data-error-message-for="name" class="absolute top-full left-0 mt-1 text-xs text-red-500 invisible"
+                    data-i18n="Name is required.">
                     Name is required.</p>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Description">Description</label>
                   <textarea name="description" id="edit-server-description"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300"></textarea>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Icon URL</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="Icon URL">Icon
+                    URL</label>
                   <input type="url" name="icon" id="edit-server-icon"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
                 </div>
 
                 <!-- Tags Section -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tags</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    data-i18n="Tags">Tags</label>
                   <input type="text" name="tags" id="edit-server-tags"
                     placeholder="e.g., api,data-processing,external (comma-separated)"
+                    data-i18n-placeholder="e.g., api,data-processing,external (comma-separated)"
                     class="mt-1 px-1.5 block w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:placeholder-gray-300 dark:text-gray-300" />
-                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400"
+                    data-i18n="Enter tags separated by commas. Tags help categorize and filter servers.">
                     Enter tags separated by commas. Tags help categorize and
                     filter servers.
                   </p>
@@ -7988,29 +8048,30 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
                 <!-- Visibility options -->
                 <div id="edit-server-visibility" class="mt-4">
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">Visibility</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                    data-i18n="Visibility">Visibility</label>
                   <div class="flex gap-x-6 mt-2">
                     <!-- Add gap-x-6 for more space between radio options -->
                     <div class="flex items-center">
                       <input type="radio" name="visibility" value="public"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-visibility-public" />
-                      <label for="edit-visibility-public"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">🌍Public</label>
+                      <label for="edit-visibility-public" class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Public">🌍Public</span></label>
                     </div>
                     <div class="flex items-center">
                       <input type="radio" name="visibility" value="team"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-visibility-team" />
-                      <label for="edit-visibility-team"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">👥Team</label>
+                      <label for="edit-visibility-team" class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Team">👥Team</span></label>
                     </div>
                     <div class="flex items-center">
                       <input type="radio" name="visibility" value="private"
                         class="form-radio h-5 w-5 text-indigo-600 dark:bg-gray-800 dark:border-gray-600"
                         id="edit-visibility-private" />
-                      <label for="edit-visibility-private"
-                        class="ml-2 text-sm text-gray-700 dark:text-gray-400">🔒Private</label>
+                      <label for="edit-visibility-private" class="ml-2 text-sm text-gray-700 dark:text-gray-400"><span
+                          data-i18n="Private">🔒Private</span></label>
                     </div>
                   </div>
                 </div>
@@ -8277,14 +8338,15 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100" data-i18n="Agent Details">
             Agent Details
           </h3>
           <div class="mt-4 space-y-4 bg-white dark:bg-gray-400" id="agent-details"></div>
         </div>
         <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
           <button type="button" onclick="closeModal('agent-modal')"
-            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300">
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300"
+            data-i18n="Close">
             Close
           </button>
         </div>
@@ -8311,6 +8373,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
           <textarea required name="query" id="a2a-test-query" rows="4"
             class="mt-1 px-1.5 block w-full rounded-md shadow-sm p-2 bg-gray-200 dark:bg-gray-800"
             placeholder="Enter your query (e.g., calc: 5*10+2 or weather: Dallas)"
+            data-i18n-placeholder="Enter your query (e.g., calc: 5*10+2 or weather: Dallas)"
             aria-describedby="a2a-test-query-help">Hello from MCP Gateway Admin UI test!</textarea>
           <p id="a2a-test-query-help" class="text-xs text-gray-500 dark:text-gray-400 mt-1"
             data-i18n="Enter the message/query to send to the A2A agent">
@@ -8333,8 +8396,7 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
 
         <div id="a2a-test-loading" class="mt-4 hidden flex items-center justify-center">
           <div class="spinner border-t-4 border-blue-600 w-6 h-6 rounded-full animate-spin" role="status"
-            aria-label="Testing agent, please wait"
-            data-i18n-aria-label="Testing agent, please wait"></div>
+            aria-label="Testing agent, please wait" data-i18n-aria-label="Testing agent, please wait"></div>
         </div>
 
         <div id="a2a-test-result" class="hidden mt-4">
@@ -8358,9 +8420,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
-            Export Configuration for <span id="server-name-display"></span>
+            <span data-i18n="Export Configuration for">Export Configuration for</span> <span
+              id="server-name-display"></span>
           </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-6"
+            data-i18n="Choose the configuration format for your MCP client:">
             Choose the configuration format for your MCP client:
           </p>
 
@@ -8369,10 +8433,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               class="w-full flex items-center p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <span class="text-2xl mr-3">▶️</span>
               <div>
-                <div class="font-medium text-gray-900 dark:text-gray-100">
+                <div class="font-medium text-gray-900 dark:text-gray-100" data-i18n="Stdio (Claude Desktop, CLI)">
                   Stdio (Claude Desktop, CLI)
                 </div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">
+                <div class="text-sm text-gray-500 dark:text-gray-400"
+                  data-i18n="For Claude Desktop, CLI tools, and stdio-based MCP clients">
                   For Claude Desktop, CLI tools, and stdio-based MCP clients
                 </div>
               </div>
@@ -8382,10 +8447,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               class="w-full flex items-center p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <span class="text-2xl mr-3">🌐</span>
               <div>
-                <div class="font-medium text-gray-900 dark:text-gray-100">
+                <div class="font-medium text-gray-900 dark:text-gray-100" data-i18n="SSE (LangChain, LlamaIndex)">
                   SSE (LangChain, LlamaIndex)
                 </div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">
+                <div class="text-sm text-gray-500 dark:text-gray-400"
+                  data-i18n="For frameworks supporting Server-Sent Events transport">
                   For frameworks supporting Server-Sent Events transport
                 </div>
               </div>
@@ -8395,10 +8461,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               class="w-full flex items-center p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <span class="text-2xl mr-3">🔗</span>
               <div>
-                <div class="font-medium text-gray-900 dark:text-gray-100">
+                <div class="font-medium text-gray-900 dark:text-gray-100" data-i18n="HTTP (REST clients)">
                   HTTP (REST clients)
                 </div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">
+                <div class="text-sm text-gray-500 dark:text-gray-400"
+                  data-i18n="For REST clients and HTTP-based MCP integrations">
                   For REST clients and HTTP-based MCP integrations
                 </div>
               </div>
@@ -8407,7 +8474,8 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         </div>
         <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
           <button type="button" onclick="closeModal('config-selection-modal')"
-            class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-auto sm:text-sm dark:text-gray-300">
+            class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-auto sm:text-sm dark:text-gray-300"
+            data-i18n="Cancel">
             Cancel
           </button>
         </div>
@@ -8426,10 +8494,11 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         <div class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-              <span id="config-display-title">Client Configuration</span>
+              <span id="config-display-title" data-i18n="Client Configuration">Client Configuration</span>
             </h3>
             <button onclick="copyConfigToClipboard()"
-              class="inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              class="inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              data-i18n="📋 Copy to Clipboard">
               📋 Copy to Clipboard
             </button>
           </div>
@@ -8439,12 +8508,13 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
               <span id="config-description"></span>
             </p>
             <div class="bg-gray-100 dark:bg-gray-800 rounded p-2 text-xs text-gray-600 dark:text-gray-400">
-              <strong>Usage:</strong> <span id="config-usage"></span>
+              <strong data-i18n="Usage:">Usage:</strong> <span id="config-usage"></span>
             </div>
           </div>
 
           <div class="relative">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              data-i18n="Configuration JSON:">
               Configuration JSON:
             </label>
             <div class="relative">
@@ -8456,15 +8526,18 @@ Hello &#123;&#123; name &#125;&#125;, welcome to &#123;&#123; company &#125;&#12
         </div>
         <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
           <button onclick="downloadConfig()"
-            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+            data-i18n="💾 Download JSON">
             💾 Download JSON
           </button>
           <button onclick="goBackToSelection()"
-            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300">
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300"
+            data-i18n="← Back">
             ← Back
           </button>
           <button type="button" onclick="closeModal('config-display-modal')"
-            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300">
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:text-gray-300"
+            data-i18n="Close">
             Close
           </button>
         </div>

@@ -24,7 +24,7 @@
     {% for resource in data %}
     <tr data-enabled="{{ resource.enabled|lower }}">
       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-        <div class="grid grid-cols-2 gap-x-2 gap-y-1 max-w-48">
+        <div class="flex flex-col gap-2">
           <button onclick="testResource('{{ resource.id }}')"
             class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/20 transition-colors"
             data-i18n="Test">Test</button>
@@ -34,13 +34,13 @@
           <button onclick="editResource('{{ resource.id }}')"
             class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-green-600 hover:text-green-900 hover:bg-green-50 dark:text-green-400 dark:hover:bg-green-900/20 transition-colors"
             data-i18n="Edit">Edit</button>
-          <div class="col-span-2 flex flex-col space-y-1">
+          <div class="flex flex-col space-y-1">
             {% if resource.enabled %}
             <form method="POST" action="{{ root_path }}/admin/resources/{{ resource.id }}/state" class="contents"
               onsubmit="return handleToggleSubmit(event, 'resources')">
               <input type="hidden" name="activate" value="false" />
               <button type="submit"
-                class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-yellow-600 hover:text-yellow-900 hover:bg-yellow-50 dark:text-yellow-400 dark:hover:bg-yellow-900/20 transition-colors"
+                class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-yellow-600 hover:text-yellow-900 hover:bg-yellow-50 dark:text-yellow-400 dark:hover:bg-yellow-900/20 transition-colors"
                 data-i18n="Deactivate">Deactivate</button>
             </form>
             {% else %}
@@ -48,7 +48,7 @@
               onsubmit="return handleToggleSubmit(event, 'resources')">
               <input type="hidden" name="activate" value="true" />
               <button type="submit"
-                class="flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-blue-600 hover:text-blue-900 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20 transition-colors"
+                class="w-full flex items-center justify-center px-2 py-1 text-xs font-medium rounded-md text-blue-600 hover:text-blue-900 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20 transition-colors"
                 data-i18n="Activate">Activate</button>
             </form>
             {% endif %}

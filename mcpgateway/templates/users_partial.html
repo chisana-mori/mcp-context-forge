@@ -46,17 +46,17 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">📅 <span data-i18n="Created:">Created:</span> {{
             user.created_at.strftime("%Y-%m-%d %H:%M") }}</p>
         </div>
-        <div class="flex gap-2 ml-4">
-          <button data-i18n="Edit">
+        <div class="flex flex-col gap-2 ml-4">
+          <button data-i18n="Edit" class="w-full text-left">
             Edit
           </button>
           {% if not user.is_current_user and not user.is_last_admin %}
           {% if not user.is_active %}
-          <button data-i18n="Activate" data-i18n-confirm="Activate this user?">
+          <button data-i18n="Activate" data-i18n-confirm="Activate this user?" class="w-full text-left">
             Activate
           </button>
           {% else %}
-          <button data-i18n="Deactivate" data-i18n-confirm="Deactivate this user?">
+          <button data-i18n="Deactivate" data-i18n-confirm="Deactivate this user?" class="w-full text-left">
             Deactivate
           </button>
           {% endif %}
@@ -64,20 +64,21 @@
           {% if not user.is_current_user and not user.is_last_admin %}
           {% if user.password_change_required %}
           <span
-            class="px-3 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 border border-orange-300 dark:border-orange-600 rounded-md"
+            class="px-3 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 border border-orange-300 dark:border-orange-600 rounded-md block w-full text-center"
             data-i18n="Password Change Required">
             Password Change Required
           </span>
           {% else %}
           <button data-i18n="Force Password Change"
-            data-i18n-confirm="Force this user to change their password on next login?">
+            data-i18n-confirm="Force this user to change their password on next login?" class="w-full text-left">
             Force Password Change
           </button>
           {% endif %}
           {% endif %}
           {% if not user.is_current_user and not user.is_last_admin %}
           <button data-i18n="Delete"
-            data-i18n-confirm="Are you sure you want to delete this user? This action cannot be undone.">
+            data-i18n-confirm="Are you sure you want to delete this user? This action cannot be undone."
+            class="w-full text-left">
             Delete
           </button>
           {% endif %}

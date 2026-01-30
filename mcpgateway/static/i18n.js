@@ -999,6 +999,42 @@ const translations = {
         "Name:": "名称：",
         "Attributes:": "属性：",
         "Tool:": "工具：",
+        "◀️ Prev": "◀️ 上一页",
+        "Next ▶️": "下一页 ▶️",
+        "of": "共",
+        "items": "项",
+        "Showing": "显示",
+        "First": "首页",
+        "Previous": "上一页",
+        "Next": "下一页",
+        "Last": "末页",
+        "Page": "第",
+        "Registered": "已注册",
+        "Total Servers": "所有服务器",
+        "Categories": "分类",
+        "MCP Registry": "MCP 注册中心",
+        "Refresh": "刷新",
+        "Category": "分类",
+        "Auth Type": "认证类型",
+        "All Categories": "所有分类",
+        "All Auth Types": "所有认证类型",
+        "Authentication Types": "认证类型",
+        "Providers": "提供商",
+        "All Providers": "所有提供商",
+        "Provider:": "提供商：",
+        "URL:": "链接：",
+        "more": "更多",
+        "Already Registered": "已注册",
+        "Add Server": "添加服务器",
+        "Registering...": "正在注册...",
+        "Register": "注册",
+        "Show:": "显示：",
+        "per page": "每页项数",
+        "to navigate": "进行导航",
+        "First Page": "首页",
+        "Previous Page": "上一页",
+        "Next Page": "下一页",
+        "Last Page": "末页",
 
         // Additional translations
         "Type": "类型",
@@ -1062,6 +1098,76 @@ const translations = {
         "Generic": "通用",
         "OpenAI": "OpenAI",
         "Anthropic": "Anthropic",
+        "Edit Tool": "编辑工具",
+        "Display Name": "显示名称",
+        "Custom display name for your UI": "用于界面的自定义显示名称",
+        "URL is required.": "URL 是必填项。",
+        "Name is required.": "名称是必填项。",
+        "Integration Type": "集成类型",
+        "Request Type": "请求类型",
+        "Headers (JSON)": "请求头 (JSON)",
+        "Input Schema (JSON)": "输入模式 (JSON)",
+        "Output Schema (JSON)": "输出模式 (JSON)",
+        "Optional JSON Schema for validating structured tool output. Per MCP spec, servers should return structured results that conform to this schema.": "用于验证结构化工具输出的可选 JSON Schema。根据 MCP 规范，服务器应返回符合此 Schema 的结构化结果。",
+        "Annotations (JSON)": "注解 (JSON)",
+        "Annotations are generally provided by the MCP servers": "注解通常由 MCP 服务器提供",
+        "Annotations like readOnlyHint, destructiveHint are generally provided by the MCP server.": "像 readOnlyHint、destructiveHint 这样的注解通常由 MCP 服务器提供。",
+        "Authentication Type": "认证类型",
+        "Username": "用户名",
+        "Password": "密码",
+        "Token": "令牌",
+        "Add Header": "添加请求头",
+        "e.g., api,data-processing,external (comma-separated)": "例如：api,数据处理,外部 (逗号分隔)",
+        "Enter tags separated by commas. Tags help categorize and filter tools.": "输入以逗号分隔的标签。标签有助于对工具进行分类和过滤。",
+        "Save Changes": "保存更改",
+        "Cancel": "取消",
+        "Visibility": "可见性",
+        "🌍Public": "🌍公开",
+        "👥Team": "👥团队",
+        "🔒Private": "🔒私有",
+        "None": "无",
+        "Basic": "基本认证",
+        "Bearer Token": "Bearer 令牌",
+        "Custom Headers": "自定义请求头",
+        "Tool Operations": "工具操作",
+        "Select tools and perform batch operations like enrichment and validation.": "选择工具并执行批量操作，如丰富和验证。",
+        "Show Inactive": "显示未激活",
+        "Loading tools...": "正在加载工具...",
+        "Selected Tools": "已选工具",
+        "No tools selected": "未选择工具",
+        "Operations": "操作",
+        "Enrich Tools": "丰富工具内容",
+        "Generate Test Cases": "生成测试用例",
+        "Clear": "清空",
+        "Bulk Import Tools": "批量导入工具",
+        "Paste a JSON array or upload a .json file. Max {max} tools.": "粘贴 JSON 数组或上传 .json 文件。最多 {max} 个工具。",
+        "JSON Data": "JSON 数据",
+        "Or upload JSON file": "或上传 JSON 文件",
+        "Import Tools": "导入工具",
+        "Processing...": "正在处理...",
+        "📊 Import Summary": "📊 导入摘要",
+        "Successful": "成功",
+        "Failed": "失败",
+        "MCP Resources": "MCP 资源",
+        "Resources are reusable data assets from MCP servers-like text, code, or media. You can also add custom resources that Tools and Prompts can reference by URI.": "资源是来自 MCP 服务器的可复用数据资产，如文本、代码或媒体。您还可以添加自定义资源，工具和提示词可以通过 URI 引用它们。",
+        "Search tools...": "搜索工具...",
+        "Resource Details": "资源详情",
+        "Resource Test": "资源测试",
+        "Prompt Details": "提示词详情",
+        "Prompt Test": "提示词测试",
+        "Tool Details": "工具详情",
+        "Test Resource": "测试资源",
+        "Test Prompt": "测试提示词",
+        "Close": "关闭",
+        "Test Tool": "测试工具",
+        "Passthrough Headers (Optional)": "透传请求头 (可选)",
+        "Additional headers to send with the request (format: \"Header-Name: Value\", one per line)": "与请求一起发送的其他请求头 (格式：\"Header-Name: Value\"，每行一个)",
+        "Run Tool": "运行工具",
+        "Usage:": "用法：",
+        "Configuration JSON:": "配置 JSON：",
+        "💾 Download JSON": "💾 下载 JSON",
+        "← Back": "← 返回",
+        "Authorization: Bearer your-token\nX-Tenant-Id: tenant-123\nX-Trace-Id: trace-456": "Authorization: Bearer your-token\nX-Tenant-Id: tenant-123\nX-Trace-Id: trace-456",
         "Custom": "自定义",
         "Authentication Type": "认证类型",
         "Description of the agent's capabilities": "代理功能描述",
@@ -1205,6 +1311,21 @@ const translations = {
         "Create Token": "创建令牌",
         "Your API Tokens": "您的 API 令牌",
         "Loading tokens...": "正在加载令牌...",
+        "Agent Details": "代理详情",
+        "Choose the configuration format for your MCP client:": "为您的 MCP 客户端选择配置格式：",
+        "Stdio (Claude Desktop, CLI)": "Stdio (Claude 桌面端, CLI)",
+        "For Claude Desktop, CLI tools, and stdio-based MCP clients": "适用于 Claude 桌面端、CLI 工具和基于 stdio 的 MCP 客户端",
+        "SSE (LangChain, LlamaIndex)": "SSE (LangChain, LlamaIndex)",
+        "For frameworks supporting Server-Sent Events transport": "适用于支持服务器发送事件 (SSE) 传输的框架",
+        "HTTP (REST clients)": "HTTP (REST 客户端)",
+        "For REST clients and HTTP-based MCP integrations": "适用于 REST 客户端和基于 HTTP 的 MCP 集成",
+        "Export Configuration for": "导出配置：",
+        "Client Configuration": "客户端配置",
+        "📋 Copy to Clipboard": "📋 复制到剪贴板",
+        "Usage:": "用法：",
+        "Configuration JSON:": "配置 JSON：",
+        "💾 Download JSON": "💾 下载 JSON",
+        "← Back": "← 返回",
     },
     "en": {
         // Fallback or explicit EN strings
@@ -1213,9 +1334,21 @@ const translations = {
 
 class I18n {
     constructor() {
-        this.lang = localStorage.getItem('mcp_lang') || 'en';
+        const systemLang = navigator.language || navigator.userLanguage || 'en';
+        this.lang = systemLang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
         this.translations = translations;
         this.observers = [];
+
+        // Listen for system language changes
+        window.addEventListener('languagechange', () => {
+            const systemLang = navigator.language || navigator.userLanguage || 'en';
+            const newLang = systemLang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+            if (this.lang !== newLang) {
+                console.log('[i18n] System language changed to:', systemLang, 'switching to:', newLang);
+                this.lang = newLang;
+                this.updatePage();
+            }
+        });
     }
 
     setLanguage(lang) {
@@ -1283,7 +1416,7 @@ class I18n {
             }
         });
 
-        // Update tooltips if they use data-i18n-tooltip
+        // Update components that use data-i18n-tooltip
         document.querySelectorAll('[data-i18n-tooltip]').forEach(el => {
             const key = el.getAttribute('data-i18n-tooltip');
             if (key) {
@@ -1297,6 +1430,14 @@ class I18n {
             }
         });
 
+        // Update titles for elements with data-i18n-title
+        document.querySelectorAll('[data-i18n-title]').forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            if (key) {
+                el.setAttribute('title', this.t(key));
+            }
+        });
+
         // Notify other components if needed (e.g. re-render charts/tables)
         window.dispatchEvent(new CustomEvent('languageChanged', { detail: this.lang }));
     }
@@ -1305,7 +1446,7 @@ class I18n {
 window.i18n = new I18n();
 
 // Debug log to check current language
-console.log('[i18n] Initializing i18n, language:', window.i18n.lang, 'from localStorage:', localStorage.getItem('mcp_lang'));
+console.log('[i18n] Initializing i18n, language:', window.i18n.lang, 'system language:', navigator.language);
 
 // Global flags
 let htmxListenersSetup = false;

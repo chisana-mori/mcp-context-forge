@@ -19869,7 +19869,7 @@ function displayTokensList(tokens) {
                         ${token.server_id ? `<div class="mt-2 text-sm"><span class="font-medium text-gray-700 dark:text-gray-300">Scoped to Server:</span> ${escapeHtml(token.server_id)}</div>` : ""}
                         ${token.resource_scopes && token.resource_scopes.length > 0 ? `<div class="mt-1 text-sm"><span class="font-medium text-gray-700 dark:text-gray-300">Permissions:</span> ${token.resource_scopes.map((p) => escapeHtml(p)).join(", ")}</div>` : ""}
                     </div>
-                    <div class="flex flex-wrap gap-2 ml-4">
+                    <div class="flex flex-col gap-2 ml-4">
                         <button
                             data-action="token-details"
                             data-token="${tokenDataEncoded}"
