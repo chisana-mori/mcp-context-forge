@@ -508,6 +508,17 @@ docker compose exec gateway python3 -m mcpgateway.utils.create_jwt_token \
 - 🔧 **Admin Tools** - pgAdmin, Redis Insight for database management
 - 🌐 **Nginx Proxy** - Caching reverse proxy (optional)
 
+**Enable HTTPS (optional):**
+```bash
+# Start with TLS enabled (auto-generates self-signed certs)
+make compose-tls
+
+# Access via HTTPS: https://localhost:8443/admin
+# Or use your own certificates:
+mkdir -p certs && cp your-cert.pem certs/cert.pem && cp your-key.pem certs/key.pem
+make compose-tls
+```
+
 ### ☸️ Quick Start - Helm (Kubernetes)
 
 Deploy to Kubernetes with enterprise-grade features:
@@ -2864,19 +2875,20 @@ YIELD_BATCH_SIZE
 
 ## Running
 
-### Makefile
+### Quick Reference
+
+| Command | Server | Port | Database | Use Case |
+|---------|--------|------|----------|----------|
+| `make dev` | Uvicorn | **8000** | SQLite | Development (single instance, auto-reload) |
+| `make serve` | Gunicorn | **4444** | SQLite | Production single-node (multi-worker) |
+| `make serve-ssl` | Gunicorn | **4444** | SQLite | Production single-node with HTTPS |
+| `make compose-up` | Docker Compose + Nginx | **8080** | PostgreSQL + Redis | Full stack (3 replicas, load-balanced) |
+| `make testing-up` | Docker Compose + Nginx | **8080** | PostgreSQL + Redis | Testing environment |
+
+### Development Server (Uvicorn)
 
 ```bash
- make serve               # Run production Gunicorn server on
- make serve-ssl           # Run Gunicorn behind HTTPS on :4444 (uses ./certs)
-```
-
-### Script helper
-
-To run the development (uvicorn) server:
-
-```bash
-make dev
+make dev                 # Uvicorn on :8000 with auto-reload and SQLite
 # or
 ./run.sh --reload --log debug --workers 2
 ```
@@ -2892,6 +2904,21 @@ Key flags:
 | `-p, --port`     | listen port      | `--port 8080`      |
 | `-w, --workers`  | gunicorn workers | `--workers 4`      |
 | `-r, --reload`   | auto-reload      | `--reload`         |
+
+### Production Server (Gunicorn)
+
+```bash
+make serve               # Gunicorn on :4444 with multiple workers
+make serve-ssl           # Gunicorn behind HTTPS on :4444 (uses ./certs)
+```
+
+### Docker Compose (Full Stack)
+
+```bash
+make compose-up          # Start full stack: PostgreSQL, Redis, 3 gateway replicas, Nginx on :8080
+make compose-logs        # Tail logs from all services
+make compose-down        # Stop the stack
+```
 
 ### Manual (Uvicorn)
 
